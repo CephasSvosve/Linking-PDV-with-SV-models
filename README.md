@@ -22,7 +22,7 @@ recovers the PDV form of Guyon and Lekeufack.
 
 | File | Description |
 |---|---|
-| `Linking-PDV-with-SV-Models (1).ipynb` | Reproduces every number, table and figure in Section 4 and Appendices C–D of the chapter |
+| `Linking-PDV-with-SV-Models-updated.ipynb` | Reproduces every number, table and figure in Section 4 and Appendices C–D of the chapter |
 | `Vol_Index.csv` | Daily S&P 500 data, 2000–2018 (see *Data* below) |
 | `results_chapter2.json` | All reported numbers from the reference run, with versions and seed |
 | `Figures/` | Figures as used in the thesis |
@@ -49,10 +49,10 @@ recovers the PDV form of Guyon and Lekeufack.
 ## Running it
 
 ```bash
-git clone https://github.com/SVOSVECEPHAS/Linking-PDV-with-SV-models.git
+git clone https://github.com/CephasSvosve/Linking-PDV-with-SV-models.git
 cd Linking-PDV-with-SV-models
 pip install numpy scipy pandas matplotlib jupyter
-jupyter notebook "Linking-PDV-with-SV-Models (1).ipynb"
+jupyter notebook "Linking-PDV-with-SV-Models-updated.ipynb"
 ```
 
 Run all cells. The notebook reads `Vol_Index.csv` from the same folder and writes figures
