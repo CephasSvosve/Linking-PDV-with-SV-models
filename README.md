@@ -22,8 +22,8 @@ recovers the PDV form of Guyon and Lekeufack.
 
 | File | Description |
 |---|---|
-| `Linking-PDV-with-SV-Models-updated.ipynb` | Reproduces every number, table and figure in Section 4 and Appendices C–D of the chapter |
-| `Vol_Index.csv` | Daily S&P 500 data, 2000–2018 (see *Data* below) |
+| `Linking-PDV-with-SV-Models-updated_08_10_2026.ipynb` | Reproduces every number, table and figure in Section 4 and Appendices C–D of the chapter |
+| `Vol_Index.csv` | Daily S&P 500 and VIX data from 2000 (see *Data* below) |
 | `results_chapter2.json` | All reported numbers from the reference run, with versions and seed |
 | `Figures/` | Figures as used in the thesis |
 
@@ -40,8 +40,8 @@ recovers the PDV form of Guyon and Lekeufack.
 3. **Real data.**
    - Next-day realised volatility (Oxford–Man 5-minute realised variance).
    - Same-day VIX, with target $(\mathrm{VIX}/100)^2/365$.
-   - Both are calibrated on 2001–2008 and evaluated out of sample on 2009–2018, with
-     bootstrap standard errors.
+   - Both are calibrated on January 2001 – December 2008 and evaluated out of sample on
+     January 2009 – June 2018, the end of the Oxford–Man data, with bootstrap standard errors.
 4. **Summary.** This prints every number used in the chapter, including the
    leverage-fallback counts (Remark `rem:leveragefallback`), and writes
    `results_chapter2.json`.
@@ -52,7 +52,7 @@ recovers the PDV form of Guyon and Lekeufack.
 git clone https://github.com/CephasSvosve/Linking-PDV-with-SV-models.git
 cd Linking-PDV-with-SV-models
 pip install numpy scipy pandas matplotlib jupyter
-jupyter notebook "Linking-PDV-with-SV-Models-updated.ipynb"
+jupyter notebook "Linking-PDV-with-SV-Models-updated_08_10_2026.ipynb"
 ```
 
 Run all cells. The notebook reads `Vol_Index.csv` from the same folder and writes figures
@@ -67,8 +67,8 @@ Matplotlib 3.6.3, with seed 2026. Results agree to machine precision with newer 
 | | In sample | Out of sample |
 |---|---|---|
 | Simulation, filter at true parameters (R², variance) | 0.699 | 0.700 |
-| Realised volatility, next day (R², volatility) | 0.729 | 0.609 |
-| VIX, same day (R², volatility) | 0.926 | 0.859 |
+| Realised volatility, next day (R², volatility) | 0.723 | 0.608 |
+| VIX, same day (R², volatility) | 0.912 | 0.856 |
 
 The variable-Q ADF matches or exceeds a fitted PDV model on 23 of 25 simulated paths, with
 nothing fitted to the volatility. The leverage fallback was not used at any step of any
